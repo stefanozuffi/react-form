@@ -1,10 +1,10 @@
-import AppList from "./assets/components/AppList"
+import AppForm from "./assets/components/AppForm"
 
 function App() {
   
   return (
     <>
-      <AppList/>
+      <AppForm/>
     </>
   )
 }

@@ -1,10 +1,10 @@
 import articles from "../data/articles"
 import ListElement from "./ListElement"
 
-export default function AppList() {
+export default function AppList(props) {
     return(
         <ul className="articles-list">
-            {articles.map(article => <ListElement title={article.title} id={article.id}/>)}
+            {props.list.map(article => <ListElement title={article.title} id={article.id} key={article.id}/>)}
         </ul>
     )
 }
