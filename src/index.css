@@ -5,11 +5,6 @@
   font-family: 'Roboto Mono Variable', monospace;
 }
 
-body {
-  background-color: pink;
-  
-}
-
 .container {
   width: 80%;
   margin-left: 10%;
@@ -29,7 +24,9 @@ input {
 
 ul {
   list-style: none;
-  margin-top: 20px !important;
+  margin-top: 10px !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 .article-head {
@@ -39,6 +36,23 @@ ul {
   border-radius: 5px;
 }
 
+.head-text {
+  cursor: pointer;
+  line-height: 0%;
+  color: gray !important;
+  font-style: italic;
+}
+
+.active {
+  color: black !important;
+  font-weight: bold;
+}
+
+.head-text:hover {
+  color: black !important;
+  font-weight: bold;
+}
+
 .btn-delete {
   background-color: red;
   border: none;
@@ -46,5 +60,9 @@ ul {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+
+  position: relative;
+  left: 16px;
+  top: 10px;
 }
 

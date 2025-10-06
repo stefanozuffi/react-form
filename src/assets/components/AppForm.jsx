@@ -6,6 +6,8 @@ export default function AppForm() {
     const [newTitle, setTitle] = useState('')
     const [journal, setJournal] = useState(articles)
 
+    const [current, setCurrent] = useState(0)
+
     //OnSubmit function
     function handleSubmit(e) {
         e.preventDefault()
@@ -42,13 +44,23 @@ export default function AppForm() {
         setJournal(journal.filter(article => article.id !== parseInt(e.currentTarget.getAttribute('data-id'))))
     }
 
+    //Accordion Function
+    function handleAcc(e) {
+        const id = parseInt(e.target.getAttribute('data-id'))
+        if (id !== current) {
+            setCurrent(id)
+        } else {
+            setCurrent(0)
+        }
+    }
+
     return(
         <div className="container">
             <form className="d-flex gap-2" onSubmit={handleSubmit}>
                 <input type="text" value={newTitle} placeholder="Type an article title" onChange={(e) => setTitle(e.target.value)}/>
                 <button className="btn btn-dark" type="submit">Add</button>
             </form>
-            <AppList list={journal} handleF={handleDelete}/>
+            <AppList list={journal} handleF={handleDelete} AccF={handleAcc} current={current}/>
         </div>
     )
     
