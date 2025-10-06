@@ -11,7 +11,7 @@ export default function AppForm() {
         e.preventDefault()
 
         if (newTitle.length >= 3) {
-            const maxID = Math.max(...journal.map(article => article.id))
+            const maxID = journal.length > 0 ? Math.max(...journal.map(article => article.id)) : 1
             
             const newArticle = {
                 id: maxID + 1,
@@ -19,9 +19,14 @@ export default function AppForm() {
                 content: ''
             }
 
-            const newJournal = [newArticle, ...journal]
+            if (!journal) {
+                const newJournal = [newArticle]
+                setJournal(newJournal)
+            } else {
+                const newJournal = [newArticle, ...journal]
+                setJournal(newJournal)
+            }
 
-            setJournal(newJournal)   
         } 
         else {
             alert('Article Title should be at least three characters long')
@@ -32,13 +37,18 @@ export default function AppForm() {
         
     }
 
+    //Delete Function
+    function handleDelete(e) {
+        setJournal(journal.filter(article => article.id !== parseInt(e.currentTarget.getAttribute('data-id'))))
+    }
+
     return(
         <div className="container">
             <form className="d-flex gap-2" onSubmit={handleSubmit}>
                 <input type="text" value={newTitle} placeholder="Type an article title" onChange={(e) => setTitle(e.target.value)}/>
                 <button className="btn btn-dark" type="submit">Add</button>
             </form>
-            <AppList list={journal}/>
+            <AppList list={journal} handleF={handleDelete}/>
         </div>
     )
     
