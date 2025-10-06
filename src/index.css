@@ -11,10 +11,19 @@ body {
 .container {
   width: 80%;
   margin-left: 10%;
+  margin-top: 10%;
   
 }
 
+
 ul {
   list-style: none;
-  padding: 0;
+  margin-top: 20px !important;
+}
+
+.article {
+  background-color: lightgray;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
 }

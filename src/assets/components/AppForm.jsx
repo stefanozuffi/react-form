@@ -34,9 +34,9 @@ export default function AppForm() {
 
     return(
         <div className="container">
-            <form onSubmit={handleSubmit}>
+            <form className="d-flex gap-2" onSubmit={handleSubmit}>
                 <input type="text" value={newTitle} placeholder="Type an article title" onChange={(e) => setTitle(e.target.value)}/>
-                <button type="submit">Add</button>
+                <button className="btn btn-dark" type="submit">Add</button>
             </form>
             <AppList list={journal}/>
         </div>
