@@ -12,6 +12,9 @@
   
 }
 
+form {
+  margin-top: 200px;
+}
 
 input {
   width: 100%;
@@ -27,6 +30,43 @@ ul {
   margin-top: 10px !important;
   margin-left: 0 !important;
   padding-left: 0 !important;
+}
+
+h8 {
+  font-size: 12px;
+  display: block;
+  font-style: italic;
+  border: 1px solid;
+  border-right: 0;
+  border-bottom: 0;
+  width: fit-content;
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+.FrontEnd {
+  color: blue;
+  border-color: blue;
+}
+
+.BackEnd {
+  color: green;
+  border-color: green;
+}
+
+.FullStack {
+  color: purple;
+  border-color: purple;
+}
+
+.UIUX {
+  color: rgb(155, 103, 7);
+  border-color: rgb(155, 103, 7);
+}
+
+.Anything {
+  color: gray;
+  border-color: gray;
 }
 
 .article-head {

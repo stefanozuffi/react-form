@@ -24,9 +24,9 @@ export default function AppForm() {
         e.preventDefault()
 
         if (article.title.length >= 3) {
-            //const maxID = journal.length > 0 ? Math.max(...journal.map(article => article.id)) : 0
+            const maxID = journal.length > 0 ? Math.max(...journal.map(article => article.id)) : 0
             
-            const newArticle = {...article, id: Date.now()}
+            const newArticle = {...article, id: maxID+1}
 
             const newJournal = [newArticle, ...journal]
             setJournal(newJournal)
@@ -56,7 +56,7 @@ export default function AppForm() {
     }
 
     return(
-        <div className="container d-flex gap-5">
+        <div className="container d-flex justify-content-around gap-5">
             <form className="d-flex flex-column gap-2" onSubmit={handleSubmit}>
 
             {/* Title */}

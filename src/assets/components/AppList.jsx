@@ -9,11 +9,11 @@ export default function AppList(props) {
 
             <li className="d-flex flex-column" key={article.id}>
                 <div className="article-head d-flex justify-content-between align-items-center">
-                    <ListElement title={article.title} id={article.id} AccF={props.AccF} current={props.current}/>
+                    <ListElement title={article.title} id={article.id} AccF={props.AccF} current={props.current} category={article.category}/>
                     <DeleteBtn id={article.id} handleF={props.handleF}/>
                 </div>
                 
-                {props.current == article.id && <p>{article.description}</p>}
+                {props.current === article.id && <p>{article.description}</p>}
             </li>
 
 
