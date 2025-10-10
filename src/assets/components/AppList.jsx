@@ -13,7 +13,7 @@ export default function AppList(props) {
                     <DeleteBtn id={article.id} handleF={props.handleF}/>
                 </div>
                 
-                {props.current == article.id && <p>{article.content}</p>}
+                {props.current == article.id && <p>{article.description}</p>}
             </li>
 
 
