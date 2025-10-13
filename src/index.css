@@ -14,6 +14,7 @@
 
 form {
   margin-top: 200px;
+  min-width: 200px;
 }
 
 input {
@@ -32,7 +33,7 @@ ul {
   padding-left: 0 !important;
 }
 
-h8 {
+.h8 {
   font-size: 12px;
   display: block;
   font-style: italic;
@@ -42,6 +43,7 @@ h8 {
   width: fit-content;
   padding: 0px 5px;
   border-radius: 5px;
+  
 }
 
 .FrontEnd {
@@ -79,6 +81,7 @@ h8 {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+  max-width: 30rem;
 }
 
 .head-text {
@@ -86,6 +89,7 @@ h8 {
   line-height: 0%;
   color: gray !important;
   font-style: italic;
+  min-width: 350px;
 }
 
 .active {

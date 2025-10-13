@@ -4,22 +4,33 @@ import ListElement from "./ListElement"
 
 export default function AppList(props) {
     return(
-        <ul className="articles-list">
-            {props.list.map(article => 
+        <div className='list-group'>
+            <div className="search-bar">
+                <input type="text" className='form-control filter-input' placeholder='Filter Results' onChange={props.handleChange} />
+            </div>
+           
+                    <ul className="articles-list">
+                        
+                        {props.list.map(article => 
 
-            <li className="article-li d-flex flex-column" key={article.id}>
-                <div className="article-head d-flex justify-content-between align-items-center gap-4">
-                    <ListElement title={article.title} id={article.id} AccF={props.AccF} current={props.current} category={article.category} online={article.online}/>
-                    
-                    <DeleteBtn id={article.id} handleF={props.handleF}/>
+                        <li className="article-li d-flex flex-column" key={article.id}>
+                            
+                                <div className="article-head d-flex justify-content-between align-items-center gap-4">
+                                    <ListElement title={article.title} id={article.id} AccF={props.AccF} current={props.current} category={article.category} online={article.online}/>
+                                    
+                                    <DeleteBtn id={article.id} handleF={props.handleF}/>
 
-                </div>
+                                </div>
+                                
+                                {props.current === article.id && <p>{article.description}</p>}
+                        
                 
-                {props.current === article.id && <p>{article.description}</p>}
-            </li>
+                        </li>
 
 
-            )}
-        </ul>
+                    )}
+                    </ul>
+            
+        </div>
     )
 }
